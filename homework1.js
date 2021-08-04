@@ -2,12 +2,12 @@
 //    count of particular element divided by the count of all elements)
 
 let array1 = [1, 1, 2, 2, 3]	// 1: 0.4
-										// 2: 0.4
-										// 3: 0.2
-let array2 = [4, 4]				// 4: 1
-let array3 = [1, 2, 3]			// 1: 0.3333333333333333
-										// 2: 0.3333333333333333
-										// 3: 0.3333333333333333
+				// 2: 0.4
+				// 3: 0.2
+let array2 = [4, 4]		// 4: 1
+let array3 = [1, 2, 3]		// 1: 0.3333333333333333
+				// 2: 0.3333333333333333
+				// 3: 0.3333333333333333
 
 function getUnique(array) {
    let result = [];
@@ -51,10 +51,10 @@ getFrequensy(array1);
 
 
 // 2. Write a function that accepts a string(a sentence) as a parameter and finds the longest 
-// 	word within the string If there are several words which are the longest ones, print the 
-// 	last word(words can be separated by space, comma or hyphen).
+//    word within the string If there are several words which are the longest ones, print the 
+//    last word(words can be separated by space, comma or hyphen).
 
-let string1 = "A revolution without dancing is a revolution not worth having."			// "revolution"
+let string1 = "A revolution without dancing is a revolution not worth having."		// "revolution"
 let string2 = "Which would be worse - to live as a monster, or to die as a good man?" 	// "monster"
 
 function delLastCharacter(string) {
@@ -90,11 +90,11 @@ findTheLongestWord(string1);
 
 
 // 3. Write a function to find longest substring in a given a string without repeating characters 
-// 	except space character. 
-// 	If there are several, return the last one. Consider that all letters are lowercase.
+//    except space character. 
+//    If there are several, return the last one. Consider that all letters are lowercase.
 
 let string3 = "there are no two words in the english language more harmful than 'good job'."	// "rmful than "go"
-let string4 = "parting your soup is not a miracle, bruce."												// "up is not a m"
+let string4 = "parting your soup is not a miracle, bruce."					// "up is not a m"
 
 function findTheLongestWord(string) {
 	let longest = "";
@@ -124,10 +124,10 @@ findTheLongestWord(string3);
 
 
 // 4. Write a function to compute a new string from the given one by moving the first char to 
-// 	come after the next two chars, so "abc" yields "bca". Repeat this process for each 
-// 	subsequent group of 3 chars. Ignore any group of fewer than 3 chars at the end.
+//    come after the next two chars, so "abc" yields "bca". Repeat this process for each 
+//    subsequent group of 3 chars. Ignore any group of fewer than 3 chars at the end.
 
-let string5 = "dfgjkloyp";		// "fgdkljypo"
+let string5 = "dfgjkloyp";	// "fgdkljypo"
 let string6 = "aweyoolp";  	// "weaooylp"
 
 function convertToArray(string) {
@@ -175,15 +175,15 @@ convertToString(firstToLast(pushInArrayEveryThree(convertToArray(string5))));
 ////////////////////////////////////////////////////////////////////////////////
 
 // 5. Write a JavaScript function to get all possible subsets of length 3 of the given array.
-// 	Assume that all elements in the array are unique.
+//    Assume that all elements in the array are unique.
 
-let array4 = [4];  							// [4]
-let array5 = [19, 6]							// [19, 6]
+let array4 = [4];  				// [4]
+let array5 = [19, 6]				// [19, 6]
 let array6 = [5, 9, 23, 0, -2, -1];		// [[5, 9, 23], [5, 9, 0], [5, 9, -2], [5, 9, -1], 
-													// [5, 23, 0], [5, 23, -2], [5, 23, -1], [5, 0, -2], 
-													// [5, 0, -1], [5, -2, -1], [9, 23, 0], [9, 23, -2], 
-													// [9, 23, -1], [9, 0, -2], [9, 0, -1], [9, -2, -1], 
-													// [23, 0, -2], [23, 0, -1], [23, -2, -1], [0, -2, -1]]
+						// [5, 23, 0], [5, 23, -2], [5, 23, -1], [5, 0, -2], 
+						// [5, 0, -1], [5, -2, -1], [9, 23, 0], [9, 23, -2], 
+						// [9, 23, -1], [9, 0, -2], [9, 0, -1], [9, -2, -1], 
+						// [23, 0, -2], [23, 0, -1], [23, -2, -1], [0, -2, -1]]
 
 
 function getAllPossibleSubsetsLength3(array) {
