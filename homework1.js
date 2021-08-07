@@ -80,7 +80,7 @@ function findTheLongestWord(string) {
 			longWord = word;
 		}
 	}
-	
+
 	return longWord;
 }
 
@@ -128,74 +128,55 @@ findTheLongestWord("parting your soup is not a miracle, bruce.");					// "up is 
 //    come after the next two chars, so "abc" yields "bca". Repeat this process for each 
 //    subsequent group of 3 chars. Ignore any group of fewer than 3 chars at the end.
 
-let string5 = "dfgjkloyp";	// "fgdkljypo"
-let string6 = "aweyoolp";  	// "weaooylp"
-
-function convertToArray(string) {
-	return string.split("");
-}
-
-function pushInArrayEveryThree(array) {
+function pushInArrayEveryThree(string) {
+	let array = string.split("");
 	let result = [];
-	let smArr = [];
+
 	while (array.length >= 3) {
-		smArr = array.splice(0, 3);
-		result.push(smArr);
+		result.push(array.splice(0, 3));
 	}
-	smArr = array.slice(0);
-	result.push(smArr);
+
+	if (array.length) {
+		result.push(array.slice(0));
+	}
+
 	return result;
 }
 
-function firstToLast(array) {
+function returnFirstToLast(array) {
+	let result = "";
+
 	for (let elem of array) {
 		if (elem.length === 3) {
 			elem.push(elem.shift());
 		}
 	}
-	return array;
-}
 
-function convertToString(array) {
-	let result = "";
 	for (let elem of array) {
 		for (let i = 0; i < elem.length; i++) {
 			result += elem[i];
 		}
 	}
+
 	return result;
 }
 
-// let strToArray = convertToArray(string5);
-// let getEvery3 = pushInArrayEveryThree(strToArray);
-// let ftToLt = firstToLast(getEvery3);
-// let result = convertToString(ftToLt);
-// console.log(result);
-convertToString(firstToLast(pushInArrayEveryThree(convertToArray(string5))));
+returnFirstToLast(pushInArrayEveryThree("dfgjkloyp"));	// "fgdkljypo"
+returnFirstToLast(pushInArrayEveryThree("aweyoolp"));	// "weaooylp"
 
 ////////////////////////////////////////////////////////////////////////////////
 
 // 5. Write a JavaScript function to get all possible subsets of length 3 of the given array.
-//    Assume that all elements in the array are unique.
-
-let array4 = [4];  				// [4]
-let array5 = [19, 6]				// [19, 6]
-let array6 = [5, 9, 23, 0, -2, -1];		// [[5, 9, 23], [5, 9, 0], [5, 9, -2], [5, 9, -1], 
-						// [5, 23, 0], [5, 23, -2], [5, 23, -1], [5, 0, -2], 
-						// [5, 0, -1], [5, -2, -1], [9, 23, 0], [9, 23, -2], 
-						// [9, 23, -1], [9, 0, -2], [9, 0, -1], [9, -2, -1], 
-						// [23, 0, -2], [23, 0, -1], [23, -2, -1], [0, -2, -1]]
-
+// 	Assume that all elements in the array are unique.
 
 function getAllPossibleSubsetsLength3(array) {
 	let result = [];
-	let temp;
 
 	if (array.length > 3) {
 		for (let i = 0; i < array.length; i++) {
 			for (let j = i+1; j < array.length; j++) {
 				for (let k = j+1; k < array.length; k++) {
-					temp = [];
+					let temp = [];
 					temp.push(array[i], array[j], array[k]);
 					result.push(temp);
 				}
@@ -206,4 +187,10 @@ function getAllPossibleSubsetsLength3(array) {
 	return result;
 }
 
-getAllPossibleSubsetsLength3(array4);
+getAllPossibleSubsetsLength3([4]);			// [4]
+getAllPossibleSubsetsLength3([19, 6]);			// [19, 6]
+getAllPossibleSubsetsLength3([5, 9, 23, 0, -2, -1]);	// [[5, 9, 23], [5, 9, 0], [5, 9, -2], [5, 9, -1],
+							// [5, 23, 0], [5, 23, -2], [5, 23, -1], [5, 0, -2],
+							// [5, 0, -1], [5, -2, -1], [9, 23, 0], [9, 23, -2],
+							// [9, 23, -1], [9, 0, -2], [9, 0, -1], [9, -2, -1],
+							// [23, 0, -2], [23, 0, -1], [23, -2, -1], [0, -2, -1]]
