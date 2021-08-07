@@ -1,51 +1,54 @@
 // 1. Given an array of numbers. Print frequency of each unique number. (Frequency is the 
 //    count of particular element divided by the count of all elements)
 
-let array1 = [1, 1, 2, 2, 3]	// 1: 0.4
-				// 2: 0.4
-				// 3: 0.2
-let array2 = [4, 4]		// 4: 1
-let array3 = [1, 2, 3]		// 1: 0.3333333333333333
-				// 2: 0.3333333333333333
-				// 3: 0.3333333333333333
-
 function getUnique(array) {
    let result = [];
+
    for (let i = 0; i < array.length; i++) {
       let isIncluded = false;
+
       for (let j = 0; j < result.length; j++) {
          if (array[i] === result[j]) {
             isIncluded = true;
             break;
          }
       }
+
       if (!isIncluded) {
          result.push(array[i]);
       }
    }
+
    return result;
 }
 
 function getCountSimilarElem(array, elem) {
 	let count = 0;
+
 	for (let i = 0; i < array.length; i++) {
  		if (elem === array[i]) {
  			count++;
  		}
 	}
+	
 	return count;
 }
 
 function getFrequensy(array) {
 	let uniqArr = getUnique(array);
-	let frequensy;
+	let frequensy = {};
+
 	for (let i = 0; i < uniqArr.length; i++) {
-		frequensy = getCountSimilarElem(array, uniqArr[i]) / array.length;
-		console.log(`Frequensy of ${uniqArr[i]} equals ${frequensy}`);
+		let countInArray = getCountSimilarElem(array, uniqArr[i]);
+		frequensy[uniqArr[i]] = countInArray / array.length;
 	}
+
+	return frequensy;
 }
 
-getFrequensy(array1);
+getFrequensy([1, 1, 2, 2, 3]);		// {1: 0.4, 2: 0.4, 3: 0.2}
+getFrequensy([4, 4]);			// {4: 1}
+getFrequensy([1, 2, 3]);		// {1: 0.3333333333333333, 2: 0.3333333333333333, 3: 0.3333333333333333}
 
 ////////////////////////////////////////////////////////////////////////////////
 
