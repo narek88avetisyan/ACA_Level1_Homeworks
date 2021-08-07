@@ -52,13 +52,9 @@ getFrequensy([1, 2, 3]);		// {1: 0.3333333333333333, 2: 0.3333333333333333, 3: 0
 
 ////////////////////////////////////////////////////////////////////////////////
 
-
 // 2. Write a function that accepts a string(a sentence) as a parameter and finds the longest 
 //    word within the string If there are several words which are the longest ones, print the 
 //    last word(words can be separated by space, comma or hyphen).
-
-let string1 = "A revolution without dancing is a revolution not worth having."		// "revolution"
-let string2 = "Which would be worse - to live as a monster, or to die as a good man?" 	// "monster"
 
 function delLastCharacter(string) {
 	let word = string.split("");
@@ -84,20 +80,18 @@ function findTheLongestWord(string) {
 			longWord = word;
 		}
 	}
+	
 	return longWord;
 }
 
-findTheLongestWord(string1);
+findTheLongestWord("A revolution without dancing is a revolution not worth having.");		// "revolution"
+findTheLongestWord("Which would be worse - to live as a monster, or to die as a good man?");	// "monster"
 
 ////////////////////////////////////////////////////////////////////////////////
-
 
 // 3. Write a function to find longest substring in a given a string without repeating characters 
 //    except space character. 
 //    If there are several, return the last one. Consider that all letters are lowercase.
-
-let string3 = "there are no two words in the english language more harmful than 'good job'."	// "rmful than "go"
-let string4 = "parting your soup is not a miracle, bruce."					// "up is not a m"
 
 function findTheLongestWord(string) {
 	let longest = "";
@@ -108,23 +102,27 @@ function findTheLongestWord(string) {
 	for (let i = 0; i < string.length; i++) {
 		char = string.charAt(i);
 		ind = tempSub.indexOf(char);
+
 		if (ind !== -1) {
 			if (tempSub.length >= longest.length) {
 				longest = tempSub;
 			}
+
 			if (char !== " ") {
 				tempSub = tempSub.substr(ind + 1);
 			}	
 		}
+		
 		tempSub += char;
 	}
+
 	return longest;
 }
 
-findTheLongestWord(string3);
+findTheLongestWord("there are no two words in the english language more harmful than 'good job'.");	// "rmful than "go"
+findTheLongestWord("parting your soup is not a miracle, bruce.");					// "up is not a m"
 
 ////////////////////////////////////////////////////////////////////////////////
-
 
 // 4. Write a function to compute a new string from the given one by moving the first char to 
 //    come after the next two chars, so "abc" yields "bca". Repeat this process for each 
@@ -209,5 +207,3 @@ function getAllPossibleSubsetsLength3(array) {
 }
 
 getAllPossibleSubsetsLength3(array4);
-
-////////////////////////////////////////////////////////////////////////////////
