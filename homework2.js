@@ -1,5 +1,5 @@
 // 1. Write a function which receives an array and a number as arguments and returns a new array 
-// 	from the elements of the given array which are larger than the given number.
+//    from the elements of the given array which are larger than the given number.
 
 function getNumbersLarger(array, number) {
 	let result = [];
@@ -14,13 +14,13 @@ function getNumbersLarger(array, number) {
 }
 
 getNumbersLarger([10, 25, 16, -5, 30, 15, 24], 16);	// [25, 30, 24]
-getNumbersLarger([1, 1, 2, -3, 0, 8, 4, 0], 9);			// "Such values do not exist"
+getNumbersLarger([1, 1, 2, -3, 0, 8, 4, 0], 9);		// "Such values do not exist"
 
 ////////////////////////////////////////////////////////////////////////////////
 
 // 2. Write a function, which receives two numbers as arguments and finds all numbers between
-// 	them such that each digit of the number is even. The numbers obtained should be printed
-// 	in a comma-separated sequence on a single line.
+//    them such that each digit of the number is even. The numbers obtained should be printed
+//    in a comma-separated sequence on a single line.
 
 function isDigitsEven(number) {
 	let arrStrNum = String(number).split("");
@@ -39,7 +39,7 @@ function getEvenDigNumbers(number1, number2) {
 	return result.length ? result.slice(0, -2) : "Such numbers does not exist"
 }
 
-getEvenDigNumbers(19, 42);		// "20, 22, 24, 26, 28, 40, 42"
+getEvenDigNumbers(19, 42);	// "20, 22, 24, 26, 28, 40, 42"
 getEvenDigNumbers(99, 199);	// "Such numbers does not exist"
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -63,7 +63,7 @@ isDigitsOdd(5);			// true
 ////////////////////////////////////////////////////////////////////////////////
 
 // 4. Given an array of numbers. Write a recursive function to find its minimal positive element.
-// 	(if such element does not exist, return -1).
+//    (if such element does not exist, return -1).
 
 function getMinPositiveElem(array, i = 0, minElem = array[0]) {
 	if (array[i] >= 0) {
@@ -80,13 +80,13 @@ function getMinPositiveElem(array, i = 0, minElem = array[0]) {
 }
 
 getMinPositiveElem([56, -9, 87, -23, 0, -105, 55, 1]);	// 0
-getMinPositiveElem([45, -9, 15, 5, -78]);						// 5
+getMinPositiveElem([45, -9, 15, 5, -78]);				// 5
 getMinPositiveElem([-5, -9, -111, -1000, -7]);				// -1
 
 ////////////////////////////////////////////////////////////////////////////////
 
 // 5. Given an array of numbers which is almost sorted in ascending order. Find the index where sorting
-// 	order is violated.
+//    order is violated.
 
 function getViolatedindex(array, i = 0) {
 	while (i < array.length-1) {
@@ -101,3 +101,4 @@ function getViolatedindex(array, i = 0) {
 
 getViolatedindex([2, 12, 15, 48, 64]); 		// -1
 getViolatedindex([-9, -4, -4, 3, 12, 4, 5]);	// 5
+
