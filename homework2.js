@@ -88,10 +88,10 @@ getMinPositiveElem([-5, -9, -111, -1000, -7]);				// -1
 // 5. Given an array of numbers which is almost sorted in ascending order. Find the index where sorting
 //    order is violated.
 
-function getViolatedindex(array, i = 0) {
+function getViolatedIndex(array, i = 0) {
 	while (i < array.length-1) {
 		if (array[i] <= array[i+1]) {
-			return getViolatedindex(array, i+1);
+			return getViolatedIndex(array, i+1);
 		}
 		return i+1;
 	}
@@ -99,6 +99,6 @@ function getViolatedindex(array, i = 0) {
 	return -1;
 }
 
-getViolatedindex([2, 12, 15, 48, 64]); 		// -1
-getViolatedindex([-9, -4, -4, 3, 12, 4, 5]);	// 5
+getViolatedIndex([2, 12, 15, 48, 64]); 		// -1
+getViolatedIndex([-9, -4, -4, 3, 12, 4, 5]);	// 5
 
