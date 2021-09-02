@@ -4,10 +4,6 @@
 //    second...)
 
 function removeFirstElement(array, i = 0) {
-	if (array.length <= 1) {
-		return array;
-	}
-
 	array[i] = array[i+1];
 
 	if (i < array.length-1) {
