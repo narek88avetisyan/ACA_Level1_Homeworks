@@ -68,7 +68,7 @@ sumOfDigits(999999999999)	// 9
 //    create an array.
 
 function invertKeysAndValues(object) {
-	let result = {};
+        let result = {};
 
 	for (let key in object) {
 		if (result.hasOwnProperty([object[key]])) {
@@ -90,24 +90,24 @@ invertKeysAndValues({a: "1", b: "2", c: "2", d: "2"})	// {1: "a", 2: ["b", "c", 
 //    parent and id properties.
 
 let treeNodes = [
-   {parent: null, id: 0},
-   {parent: 0, id: 1},
-   {parent: 0, id: 2},
-   {parent: 1, id: 3},
-   {parent: 1, id: 4},
-   {parent: 2, id: 5},
-   {parent: 4, id: 6},
+	{parent: null, id: 0},
+	{parent: 0, id: 1},
+	{parent: 0, id: 2},
+	{parent: 1, id: 3},
+	{parent: 1, id: 4},
+	{parent: 2, id: 5},
+	{parent: 4, id: 6},
 ];
 
 function makeTree(treeNodes, parentId = null) {
-   let childs = treeNodes.filter(node => node.parent === parentId);
-   let tree = {};
+	let childs = treeNodes.filter(node => node.parent === parentId);
+	let tree = {};
    
-   childs.forEach(child => {
-      tree[child.id] = makeTree(treeNodes, child.id);
-   })
+	childs.forEach(child => {
+		tree[child.id] = makeTree(treeNodes, child.id);
+	})
 
-   return tree;
+	return tree;
 }
 
 makeTree(treeNodes);
