@@ -72,12 +72,7 @@ function invertKeysAndValues(object) {
 
 	for (let key in object) {
 		if (result.hasOwnProperty([object[key]])) {
-			if (typeof result[object[key]] === "string") {
-				let value = result[object[key]].split("");
-				result[object[key]] = value;
-    				value.push(key);
-
-			} else result[object[key]].push(key);
+			result[object[key]] = [].concat(result[object[key]], key);
 
 		} else result[object[key]] = key;
 	}
